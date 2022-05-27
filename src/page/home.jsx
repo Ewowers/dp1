@@ -46,19 +46,19 @@ export const Home = () => {
             <Col span={24}>
               <Tabs>
                 <TabPane tab="Новое поступление" key="1">
-                  <div style={{ display: "flex", gap: 10 }}>
+                  <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "space-between" }}>
                     {products.splice(0, 19).map((item) => (
                       <Card item={item} key={item._id} />
                     ))}
                   </div>
                 </TabPane>
                 <TabPane tab="Горячие товары" key="2">
-                  <div style={{ display: "flex", gap: 10 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
                     {products
                       .reverse()
                       .splice(0, 19)
                       .map((item) => (
-                        <Card item={item} key={item._id} />
+                        <Card item={item} key={item._id} gor={true} />
                       ))}
                   </div>
                 </TabPane>
@@ -73,10 +73,10 @@ export const Home = () => {
                   headset_mic
                 </span>
                 <p>
-                  <strong>Product Support</strong>
+                  <strong>Поддержка продукта</strong>
                 </p>
                 <p>
-                  Up to 3 years on-site warranty <br /> available for your peace of mind.
+                  Гарантия с выездом на место до 3 лет <br /> для вашего спокойствия.
                 </p>
               </div>
 
@@ -88,11 +88,9 @@ export const Home = () => {
                   account_circle
                 </span>
                 <p>
-                  <strong>Personal Account</strong>
+                  <strong>Доставка товара</strong>
                 </p>
-                <p>
-                  With big discounts, free delivery and <br /> a dedicated support specialist.
-                </p>
+                <p>Любую точку Казахстана</p>
               </div>
 
               <div style={{ textAlign: "center", margin: 10 }}>
@@ -103,10 +101,10 @@ export const Home = () => {
                   sell
                 </span>
                 <p>
-                  <strong>Amazing Savings</strong>
+                  <strong>Удивительная экономия</strong>
                 </p>
                 <p>
-                  Up to 70% off new Products, you can <br /> be sure of the best price.
+                  Скидки до 70 % на новые продукты. <br /> Вы можете быть уверены в лучшей цене.
                 </p>
               </div>
             </Col>

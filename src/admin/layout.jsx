@@ -1,5 +1,5 @@
 import { Layout, Menu } from "antd";
-import { DesktopOutlined, PieChartOutlined } from "@ant-design/icons";
+import { ProfileOutlined, TagsOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { Outlet, Link, useParams } from "react-router-dom";
 import { AdminProduct } from "./product";
@@ -13,7 +13,7 @@ function getItem(label, key, icon, link) {
   };
 }
 
-const items = [getItem("Товары", "1", <PieChartOutlined />, "product"), getItem("Пользователи", "2", <DesktopOutlined />, "user")];
+const items = [getItem("Товары", "1", <TagsOutlined />, "product"), getItem("Заказы", "2", <ProfileOutlined />, "order")];
 
 export const AdminLayout = () => {
   const [collapsed, setCollapsed] = useState(false);

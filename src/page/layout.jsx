@@ -30,11 +30,11 @@ const reducer = (state = initialState || [], action) => {
   }
 };
 export const stor = createStore(reducer);
-export const Layouts = () => {
+export const Layouts = ({ get }) => {
   return (
     <>
       <Provider store={stor}>
-        <Header />
+        <Header get={get} />
         <Outlet />
       </Provider>
     </>

@@ -68,3 +68,18 @@ header .navbar ul li a {
 header .logo {
   font-size: 32px;
 }
+
+.ant-modal-close {
+  display: none !important;
+}
+.orderItem {
+  padding: 10px;
+  height: auto;
+}
+.orderItem.active .ant-col {
+  text-decoration: line-through;
+}
+.orderItem .ant-col {
+  border-bottom: 1px solid gray;
+  text-align: center;
+}

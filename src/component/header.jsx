@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { Row, Col, Badge, Avatar, Drawer, Button, InputNumber } from "antd";
 import { ShoppingCartOutlined, DeleteOutlined } from "@ant-design/icons";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { connect, useDispatch, useSelector, useStore } from "react-redux";
+import { useCallback, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const Header = (props) => {
+const Header = () => {
   const [basketState, setBasketState] = useState(false);
-  const { getState } = useStore();
   const state = useSelector((state) => state);
-  console.log(getState());
+
   return (
     <header>
       <Row justify="center" style={{ background: "#3a3a3a", color: "#ffffff" }}>
@@ -31,7 +30,7 @@ const Header = (props) => {
             <Col md={4}>
               <h1 className="logo">
                 <Link to="/" style={{ color: "black" }}>
-                  Logo
+                  It-store
                 </Link>
               </h1>
             </Col>
@@ -39,16 +38,16 @@ const Header = (props) => {
               <nav>
                 <ul>
                   <li>
-                    <a href="/category/videoCard">Видео Карта</a>
+                    <a href="/category/videoCard">Видеокарты</a>
                   </li>
                   <li>
-                    <a href="/category/processor">Тип процессора</a>
+                    <a href="/category/processor">Процессоры</a>
                   </li>
                   <li>
-                    <a href="/category/motherboard">Материнская плата</a>
+                    <a href="/category/motherboard">Материнская платы</a>
                   </li>
                   <li>
-                    <a href="/category/powerSupply">Блок питания</a>
+                    <a href="/category/powerSupply">Блоки питания</a>
                   </li>
                 </ul>
               </nav>
@@ -116,6 +115,11 @@ const Basket = (props) => {
       {state.map((item) => {
         return <Item item={item} key={item._id} />;
       })}
+      <Button type="primary" style={{ width: "100%", marginTop: 10 }}>
+        <Link to="order" onClick={() => setVisible(false)}>
+          Оформить заказ
+        </Link>
+      </Button>
     </Drawer>
   );
 };

@@ -1,5 +1,4 @@
-import { Row, Col, Breadcrumb, Button, message } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { Row, Col, Breadcrumb } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -23,9 +22,7 @@ export const CategoryPage = () => {
       param = "Блок питания";
       break;
   }
-  const onAlert = () => {
-    message.success("Товар добавлен в карзину");
-  };
+
   useEffect(() => {
     axios.get("/api/product/category=" + category).then((res) => setProducts(res.data));
   }, []);
@@ -41,20 +38,8 @@ export const CategoryPage = () => {
               <Breadcrumb.Item>{param}</Breadcrumb.Item>
             </Breadcrumb>
           </Col>
-          <Col span={24} style={{ display: "flex", gap: 10 }}>
+          <Col span={24} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 50 }}>
             {products.map((item) => (
-              // <Card key={item._id} style={{ width: 280 }}>
-              //   <img src={item.image[0]} width="100%" height={280} />
-              //   <p style={{ fontSize: 18 }}>
-              //     <strong>{item.title}</strong>
-              //   </p>
-              //   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              //     <p style={{ margin: 0 }}>₸{item.prise}</p>
-              //     <Button onClick={onAlert}>
-              //       <ShoppingCartOutlined />
-              //     </Button>
-              //   </div>
-              // </Card>
               <Card item={item} key={item._id} />
             ))}
           </Col>
