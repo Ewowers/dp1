@@ -1,6 +1,7 @@
 import { Tabs, Carousel, Col, Row } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import img from "../image/slider.png";
+import img2 from "../image/PROD.png";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Card from "../component/card";
@@ -33,10 +34,7 @@ export const Home = () => {
                     <img src={img} alt="slide1" width="100%" height="400" />
                   </div>
                   <div>
-                    <img src={img} alt="slide1" width="100%" height="400" />
-                  </div>
-                  <div>
-                    <img src={img} alt="slide1" width="100%" height="400" />
+                    <img src={img2} alt="slide1" width="100%" height="400" />
                   </div>
                 </Carousel>
               </div>
